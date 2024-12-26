@@ -12,8 +12,9 @@ import { Button } from "./ui/button";
 import { useCursorVariants } from "@/utils/context";
 import { Dialog } from "./ui/dialog";
 import { ProjectsProvider, useProjects } from "@/utils/project-context";
+import Link from "next/link";
 
-// Dummy data
+// Updated dummy data with URLs
 const dummyProjects: Project[] = [
   {
     _id: "1",
@@ -21,6 +22,7 @@ const dummyProjects: Project[] = [
     image: { url: "/portfolio.png" },
     techStack: ["React", "Web", "DevOps"],
     enabled: true,
+    url: "https://github.com/KAXUN01/nextjs-portfolio",
   },
   {
     _id: "2",
@@ -28,13 +30,15 @@ const dummyProjects: Project[] = [
     image: { url: "/dms.png" },
     techStack: ["React", "Web"],
     enabled: true,
+    url: "https://github.com/WarmHands-DMS/warmhands",
   },
   {
     _id: "3",
-    title: "Heart Disease Prediction Project",
+    title: "Heart Disease Prediction Machine Learning Project",
     image: { url: "/hdp.png" },
     techStack: ["Machine Learning", "Web"],
     enabled: true,
+    url: "https://heart-disease-prediction-system-ml.streamlit.app/",
   },
   {
     _id: "4",
@@ -42,22 +46,23 @@ const dummyProjects: Project[] = [
     image: { url: "/Astronomy.png" },
     techStack: ["Web", "NPM"],
     enabled: true,
+    url: "https://www.npmjs.com/package/astronomy-date-formatter",
   },
   {
     _id: "5",
-    title:
-      "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
+    title: "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
     image: { url: "/docker.png" },
     techStack: ["DevOps", "Web"],
     enabled: true,
+    url: "https://github.com/KAXUN01/nextjs-portfolio",
   },
   {
     _id: "6",
-    title:
-      "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
+    title: "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
     image: { url: "/terraform.png" },
     techStack: ["DevOps", "Web"],
     enabled: true,
+    url: "https://github.com/KAXUN01/Complete-CI-CD-with-Terraform",
   },
   {
     _id: "7",
@@ -65,6 +70,7 @@ const dummyProjects: Project[] = [
     image: { url: "/mydialogapp.png" },
     techStack: ["UI"],
     enabled: true,
+    url: "https://www.figma.com/file/mydialogapp",
   },
 ];
 
@@ -137,7 +143,7 @@ const ProjectContainer = () => {
   );
 };
 
-const Card = ({ title, image }: Project) => {
+const Card = ({ title, image, url }: Project) => {
   const [hover, setHover] = useState(false);
   const { setVariant } = useCursorVariants();
 
@@ -151,40 +157,42 @@ const Card = ({ title, image }: Project) => {
   };
 
   return (
-    <motion.div
-      layout
-      className="relative rounded-xl md:rounded-3xl overflow-hidden aspect-square bg-secondary/30 md:px-4"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-    >
-      <div className="absolute top-2 right-2 w-full h-full flex justify-end md:hidden">
-        <div className="bg-white size-8 rounded-full text-black grid place-items-center">
-          <ArrowUpRight size={20} />
+    <Link href={url} target="_blank" rel="noopener noreferrer">
+      <motion.div
+        layout
+        className="relative rounded-xl md:rounded-3xl overflow-hidden aspect-square bg-secondary/30 md:px-4 cursor-pointer"
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+      >
+        <div className="absolute top-2 right-2 w-full h-full flex justify-end md:hidden">
+          <div className="bg-white size-8 rounded-full text-black grid place-items-center">
+            <ArrowUpRight size={20} />
+          </div>
         </div>
-      </div>
-      <div className="md:py-8 relative">
-        <motion.div
-          animate={{ y: hover ? -10 : 0 }}
-          className="flex justify-between items-center max-md:hidden"
-        >
-          <p className="text-sm md:text-xl font-semibold max-md:opacity-0">
-            {title}
-          </p>
-          <button className="flex gap-2 items-center justify-center max-md:px-4">
-            <TextReveal className="max-md:text-sm">Visit</TextReveal>
-            <span className="bg-black text-white/80 rounded-full p-1">
-              <ArrowUpRight className="size-4 md:size-6" />
-            </span>
-          </button>
-        </motion.div>
-      </div>
-      <Image
-        src={image.url}
-        width={500}
-        height={500}
-        alt={title}
-        className="object-cover h-full w-full object-center rounded-xl md:rounded-t-3xl"
-      />
-    </motion.div>
+        <div className="md:py-8 relative">
+          <motion.div
+            animate={{ y: hover ? -10 : 0 }}
+            className="flex justify-between items-center max-md:hidden"
+          >
+            <p className="text-sm md:text-xl font-semibold max-md:opacity-0">
+              {title}
+            </p>
+            <button className="flex gap-2 items-center justify-center max-md:px-4">
+              <TextReveal className="max-md:text-sm">Visit</TextReveal>
+              <span className="bg-black text-white/80 rounded-full p-1">
+                <ArrowUpRight className="size-4 md:size-6" />
+              </span>
+            </button>
+          </motion.div>
+        </div>
+        <Image
+          src={image.url}
+          width={500}
+          height={350}
+          alt={title}
+          className="object-cover h-full w-full object-center rounded-xl md:rounded-t-3xl"
+        />
+      </motion.div>
+    </Link>
   );
 };
