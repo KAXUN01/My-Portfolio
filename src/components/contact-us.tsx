@@ -14,11 +14,19 @@ import { cn } from "@/utils/cn";
 import { About, SocialHandle } from "@/utils/interfaces";
 import Link from "next/link";
 
+interface SocialHandle {
+  _id: string;
+  platform: string;
+  url: string;
+  enabled: boolean;
+}
+
 interface ContactProps {
   email: string;
-  social_handle: SocialHandle[];
+  social_handle: SocialHandle[]; // Ensure this is explicitly an array
   about: About;
 }
+
 export const ContactUs = ({ email, social_handle, about }: ContactProps) => {
   return (
     <motion.section className="relative">
@@ -96,17 +104,18 @@ export const ContactUs = ({ email, social_handle, about }: ContactProps) => {
             </div>
 
             <div className="flex md:gap-8 gap-4 mt-auto md:pb-16">
-              {social_handle.map((social, index) =>
-                social.enabled ? (
-                  <Transition
-                    key={social._id}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                  >
-                    <Link href={social.url}>
-                      <TextReveal>{social.platform}</TextReveal>
-                    </Link>
-                  </Transition>
-                ) : null
+              {(Array.isArray(social_handle) ? social_handle : []).map(
+                (social, index) =>
+                  social.enabled ? (
+                    <Transition
+                      key={social._id}
+                      transition={{ delay: 0.4 + index * 0.1 }}
+                    >
+                      <Link href={social.url}>
+                        <TextReveal>{social.platform}</TextReveal>
+                      </Link>
+                    </Transition>
+                  ) : null
               )}
             </div>
           </div>

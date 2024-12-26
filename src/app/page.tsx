@@ -10,20 +10,53 @@ import {
   TextReveal,
   Transition,
 } from "@/components/ui";
-
-import { UserObject } from "@/utils/interfaces";
 import Experience from "@/components/experience";
 import { ContactUs } from "@/components/contact-us";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
 
-export default async function Home() {
-  const res = await fetch(
-    "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
-  );
+export default function Home() {
+  // Sample Data
+  const user = {
+    about:
+      "I am a passionate developer with expertise in building modern web applications.",
+    testimonials: [
+      { _id: "1", content: "Great work!", author: "John Doe" },
+      { _id: "2", content: "Amazing experience!", author: "Jane Smith" },
+    ],
+    services: [
+      {
+        _id: "1",
+        name: "Web Development",
+        desc: "Building responsive and high-performance web applications.",
+        charge: "$100/hour",
+        avatar: { url: "/images/web-dev.jpg" },
+      },
+    ],
+    skills: [
+      { _id: "1", name: "React", enabled: true, sequence: 1 },
+      { _id: "2", name: "Node.js", enabled: true, sequence: 2 },
+      { _id: "3", name: "CSS", enabled: true, sequence: 3 },
+    ],
+    projects: [
+      { _id: "1", name: "Portfolio Website", desc: "A showcase of my work." },
+    ],
+    social_handles: {
+      github: "https://github.com/username",
+      linkedin: "https://linkedin.com/in/username",
+    },
+    timeline: [
+      {
+        _id: "1",
+        title: "Started my career",
+        year: "2020",
+        desc: "Junior developer.",
+      },
+      { _id: "2", title: "Promoted", year: "2022", desc: "Senior developer." },
+    ],
+    email: "developer@example.com",
+  };
 
-  const { user } = (await res.json()) as UserObject;
-  if (!user) return null;
   const {
     about,
     testimonials,
@@ -62,34 +95,6 @@ export default async function Home() {
               ) : null
             )}
         </ParallaxText>
-        <ParallaxText baseVelocity={5}>
-          {skills
-            .sort((a, b) => a.sequence - b.sequence)
-            .map((skill) =>
-              skill.enabled ? (
-                <span
-                  key={skill._id}
-                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
-                >
-                  {skill.name} •
-                </span>
-              ) : null
-            )}
-        </ParallaxText>
-        <ParallaxText baseVelocity={-5}>
-          {skills
-            .sort((a, b) => a.sequence - b.sequence)
-            .map((skill) =>
-              skill.enabled ? (
-                <span
-                  key={skill._id}
-                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
-                >
-                  {skill.name} •
-                </span>
-              ) : null
-            )}
-        </ParallaxText>
       </section>
       {/* ===SERVICES SECTION=== */}
       <section className="px-2 py-20 relative" id="services">
@@ -105,7 +110,7 @@ export default async function Home() {
                 heading={service.name}
                 href=""
                 price={service.charge}
-                imgSrc={service.image.url}
+                imgSrc={service.avatar.url}
                 subheading={service.desc}
               />
             </Transition>
@@ -119,21 +124,6 @@ export default async function Home() {
       </section>
       {/* ===PROJECTS SECTION=== */}
       <Projects data={projects} />
-      {/* ===TESTIMONIALS SECTION=== */}
-      <section className="py-20 relative" id="testimonials">
-        <span className="blob size-1/2 absolute -top-20 left-0 blur-[100px] -z-10" />
-        <SectionHeading className="md:pl-28">
-          <SlideIn className="text-white/40">What Our</SlideIn> <br />
-          <SlideIn className="">Clients Say</SlideIn>
-        </SectionHeading>
-        <Testimonials data={testimonials} speed="normal" pauseOnHover />
-        <Testimonials
-          data={testimonials}
-          pauseOnHover
-          speed="normal"
-          direction="left"
-        />
-      </section>
 
       {/* ===CONTACT US=== */}
       <div

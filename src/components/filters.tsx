@@ -8,8 +8,12 @@ import { useProjects } from "@/utils/project-context";
 const Filters = () => {
   const { projects, setAppliedFilter, appliedFilter, sort, setSort } =
     useProjects();
+
+  // Handle undefined or invalid techStack
   const techStack = projects.flatMap((filter) =>
-    filter.techStack.map((val) => val.trim())
+    Array.isArray(filter.techStack)
+      ? filter.techStack.map((val) => val.trim())
+      : []
   );
   const filters = Array.from(new Set(techStack));
 

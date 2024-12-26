@@ -52,11 +52,10 @@ const About = ({ about, timeline }: AboutProps) => {
         <div className="sticky top-6">
           <Transition>
             <Image
-              src={about.avatar.url}
+              src={about?.avatar?.url || "/images/default-avatar.jpg"} // Fallback to default image
               width={400}
               height={400}
-              alt={about.name}
-              className="rounded-xl max-md:aspect-square object-cover"
+              alt={about?.name || "Default Name"} // Fallback alt text
             />
           </Transition>
         </div>
