@@ -1,84 +1,104 @@
 import About from "@/components/about";
 import Header from "@/components/header";
 import Projects from "@/components/projects";
-import Testimonials from "@/components/testimonials";
 import {
-  HoverImageLink,
   ParallaxText,
   SectionHeading,
   SlideIn,
   TextReveal,
   Transition,
 } from "@/components/ui";
+
+import { UserObject } from "@/utils/interfaces";
 import Experience from "@/components/experience";
+import Education from "@/components/education"; // Added Education component import
 import { ContactUs } from "@/components/contact-us";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
 
 export default function Home() {
-  // Sample Data
-  const user = {
-    about:
-      "I am a passionate developer with expertise in building modern web applications.",
-    testimonials: [
-      { _id: "1", content: "Great work!", author: "John Doe" },
-      { _id: "2", content: "Amazing experience!", author: "Jane Smith" },
-    ],
-    services: [
-      {
-        _id: "1",
-        name: "Web Development",
-        desc: "Building responsive and high-performance web applications.",
-        charge: "$100/hour",
-        avatar: { url: "/images/web-dev.jpg" },
-      },
-    ],
+  // Dummy data
+  const user: UserObject = {
+    about: {
+      name: "Kasun Madhushan",
+      description:
+        "I am a web developer with a background in graphic design and UI/UX. I have experience in creating scalable, efficient websites and applications.",
+      photo: "/edited.png",
+    },
     skills: [
-      { _id: "1", name: "React", enabled: true, sequence: 1 },
-      { _id: "2", name: "Node.js", enabled: true, sequence: 2 },
-      { _id: "3", name: "CSS", enabled: true, sequence: 3 },
+      { _id: 1, name: "JavaScript", sequence: 1, enabled: true },
+      { _id: 2, name: "React", sequence: 2, enabled: true },
+      { _id: 3, name: "Node.js", sequence: 3, enabled: true },
+      { _id: 4, name: "AWS", sequence: 4, enabled: true },
+      { _id: 5, name: "CSS", sequence: 5, enabled: true },
     ],
     projects: [
-      { _id: "1", name: "Portfolio Website", desc: "A showcase of my work." },
+      {
+        _id: 1,
+        title: "Project One",
+        description: "Description of Project One",
+        link: "https://project1.com",
+      },
+      {
+        _id: 2,
+        title: "Project Two",
+        description: "Description of Project Two",
+        link: "https://project2.com",
+      },
     ],
     social_handles: {
-      github: "https://github.com/username",
-      linkedin: "https://linkedin.com/in/username",
+      github: "https://github.com/Kasun",
+      linkedin: "https://linkedin.com/in/kasun",
     },
     timeline: [
       {
-        _id: "1",
-        title: "Started my career",
-        year: "2020",
-        desc: "Junior developer.",
+        _id: 1,
+        jobTitle: "Web Developer",
+        company_name: "Tech Company",
+        jobLocation: "Remote",
+        startDate: "2022-01-01",
+        endDate: "2023-01-01",
+        summary: "Worked on web development projects using React.",
+        bulletPoints: [
+          "Developed user interfaces",
+          "Collaborated with designers",
+        ],
       },
-      { _id: "2", title: "Promoted", year: "2022", desc: "Senior developer." },
     ],
-    email: "developer@example.com",
+    education: [
+      {
+        _id: 1,
+        degree: "BSc in Information and Communication Technology",
+        institution: "University of Jayewardenepura",
+        startDate: "2019-09-01",
+        endDate: "2023-06-01",
+        summary: "Studied software development, networks, and systems.",
+      },
+      {
+        _id: 2,
+        degree: "Diploma in Full Stack Development",
+        institution: "University of Moratuwa",
+        startDate: "2017-09-01",
+        endDate: "2019-06-01",
+        summary: "Focused on front-end and back-end development.",
+      },
+    ],
   };
 
-  const {
-    about,
-    testimonials,
-    services,
-    skills,
-    projects,
-    social_handles,
-    timeline,
-    email,
-  } = user;
+  const { about, skills, projects, social_handles, timeline, education } = user;
 
   return (
     <main className="relative">
       <Transition className="fixed md:top-8 top-6 md:left-8 left-6 z-30 hover:text-white/80 text-white/40">
         <Link href={"/"}>
-          <TextReveal className="font-semibold ">ThePortfolio</TextReveal>
+          <TextReveal className="font-semibold">ThePortfolio</TextReveal>
         </Link>
       </Transition>
       <Header social={social_handles} />
       <Hero about={about} />
       <About about={about} timeline={timeline} />
       <Experience timeline={timeline} />
+      <Education education={education} /> {/* Added Education component */}
       {/* ===SKILLS SECTION=== */}
       <section id="skills">
         <ParallaxText baseVelocity={-5}>
@@ -95,42 +115,43 @@ export default function Home() {
               ) : null
             )}
         </ParallaxText>
-      </section>
-      {/* ===SERVICES SECTION=== */}
-      <section className="px-2 py-20 relative" id="services">
-        <span className="blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10" />
-        <SectionHeading className="md:pl-16 overflow-hidden">
-          <SlideIn className="text-white/40">Here&apos;s how</SlideIn> <br />
-          <SlideIn>I can help you</SlideIn>
-        </SectionHeading>
-        <div className="mx-auto pt-10">
-          {services.map((service) => (
-            <Transition key={service._id}>
-              <HoverImageLink
-                heading={service.name}
-                href=""
-                price={service.charge}
-                imgSrc={service.avatar.url}
-                subheading={service.desc}
-              />
-            </Transition>
-          ))}
-        </div>
-        <Transition className="flex items-center py-10 md:hidden">
-          <div className="p-4 rounded-full border border-white/50">
-            <span>Discuss the project</span>
-          </div>
-        </Transition>
+        <ParallaxText baseVelocity={5}>
+          {skills
+            .sort((a, b) => a.sequence - b.sequence)
+            .map((skill) =>
+              skill.enabled ? (
+                <span
+                  key={skill._id}
+                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
+                >
+                  {skill.name} •
+                </span>
+              ) : null
+            )}
+        </ParallaxText>
+        <ParallaxText baseVelocity={-5}>
+          {skills
+            .sort((a, b) => a.sequence - b.sequence)
+            .map((skill) =>
+              skill.enabled ? (
+                <span
+                  key={skill._id}
+                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
+                >
+                  {skill.name} •
+                </span>
+              ) : null
+            )}
+        </ParallaxText>
       </section>
       {/* ===PROJECTS SECTION=== */}
       <Projects data={projects} />
-
       {/* ===CONTACT US=== */}
       <div
         className="rounded-t-[2rem] md:rounded-t-[3rem] overflow-hidden"
         id="contact"
       >
-        <ContactUs email={email} about={about} social_handle={social_handles} />
+        <ContactUs />
       </div>
     </main>
   );

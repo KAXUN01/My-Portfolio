@@ -8,32 +8,28 @@ import { SectionHeading, PerspectiveText, SlideIn, Transition } from "./ui";
 const timeline = [
   {
     _id: 1,
-    jobTitle: "Graphic Designer",
+    jobTitle: "BSc (Hons) in ICT",
     company_name: "New Pacific Systems & Technologies",
-    jobLocation: "Remote",
-    startDate: new Date("june 2023"),
+    jobLocation: "",
+    startDate: new Date("OCT 2021"),
     endDate: "Present",
     summary:
-      "Developed user-friendly web applications using React and JavaScript.",
-    bulletPoints: [
-      "Created user-focused designs, including logos, banners, UI designs and prototypes.",
-      "Collaborated with cross-functional teams to deliver high-quality visuals.",
-      "Managed multiple projects, ensured timely delivery, and incorporated the latest design trends.",
-    ],
+      "Specialized in Network Technology" <br />"Faculty of Technology" <br />"University of Jayewardenepura ",
+    bulletPoints: [],
     forEducation: false,
     enabled: true,
     sequence: 1,
   },
 ];
 
-const Experience = () => {
+const Education = () => {
   const [hover, setHover] = useState<number | null>(null);
 
   return (
     <div className="relative pb-20">
       <span className="blob absolute top-[20%] left-0 w-1/3 h-5/6 blur-[100px] -z-10" />
       <SectionHeading className="pl-4 md:px-12 py-20">
-        <SlideIn className="text-white/40">Experience</SlideIn>
+        <SlideIn className="text-white/40">Educatoin</SlideIn>
       </SectionHeading>
       <div>
         {timeline.map((exp, index) => (
@@ -78,11 +74,7 @@ const Experience = () => {
             >
               <p className="text-foreground/60 py-2">{exp.summary}</p>
               <ul className="list-disc list-inside">
-                {exp.bulletPoints.map((point, index) => (
-                  <li key={index} className="text-foreground/80 max-md:text-sm">
-                    {point}
-                  </li>
-                ))}
+                
               </ul>
             </motion.div>
           </Transition>
@@ -92,4 +84,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;
