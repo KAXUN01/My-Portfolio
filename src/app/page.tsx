@@ -11,7 +11,7 @@ import {
 
 import { UserObject } from "@/utils/interfaces";
 import Experience from "@/components/experience";
-import Education from "@/components/education"; // Added Education component import
+import Education from "@/components/education";
 import { ContactUs } from "@/components/contact-us";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
@@ -104,7 +104,8 @@ export default function Home() {
       <Hero about={about} />
       <About about={about} timeline={timeline} />
       <Experience timeline={timeline} />
-      <Education education={education} /> {/* Added Education component */}
+      <Education education={education} />
+
       {/* ===SKILLS SECTION=== */}
       <section id="skills">
         <ParallaxText baseVelocity={-5}>
