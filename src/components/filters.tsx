@@ -9,7 +9,7 @@ const Filters = () => {
   const { projects, setAppliedFilter, appliedFilter, sort, setSort } =
     useProjects();
 
-  // Handle undefined or invalid techStack
+  // Extract unique tech stack filters
   const techStack = projects.flatMap((filter) =>
     Array.isArray(filter.techStack)
       ? filter.techStack.map((val) => val.trim())
@@ -19,25 +19,28 @@ const Filters = () => {
 
   return (
     <div className="flex items-center gap-4 py-8 justify-center max-md:flex-wrap">
+      {/* 'All' filter button */}
       <Transition viewport={{ once: true }}>
         <Button
           className={cn(
-            "border border-white/30 px-6 py-2 rounded-full relative",
-            appliedFilter === "all" && "text-black border-transparent"
+            "border border-white/30 px-6 py-2 rounded-full relative text-sm md:text-base",
+            appliedFilter === "all" &&
+              "text-white bg-primary border-transparent"
           )}
           onClick={() => setAppliedFilter("all")}
         >
           {appliedFilter === "all" && (
             <motion.span
-              transition={{ type: "spring", bounce: 0.3 }}
-              exit={{ type: "spring" }}
               layoutId="active-filter"
               className="absolute top-0 left-0 w-full h-full bg-primary -z-10 rounded-full"
+              transition={{ type: "spring", bounce: 0.3 }}
             />
           )}
-          <TextReveal>All</TextReveal>
+          <span>All</span>
         </Button>
       </Transition>
+
+      {/* Dynamically generated filter buttons */}
       {filters.map((filter, index) => (
         <Transition
           key={index}
@@ -46,22 +49,25 @@ const Filters = () => {
         >
           <Button
             onClick={() => setAppliedFilter(filter)}
-            animate={{ color: appliedFilter === filter ? "black" : "" }}
-            transition={{ delay: 0.4 }}
-            className="relative border border-white/20 px-3 py-2 rounded-full"
+            className={cn(
+              "relative border border-white/20 px-4 py-2 rounded-full text-sm md:text-base",
+              appliedFilter === filter &&
+                "text-white bg-primary border-transparent"
+            )}
           >
             {appliedFilter === filter && (
               <motion.span
-                transition={{ type: "spring", bounce: 0.3 }}
-                exit={{ type: "spring" }}
                 layoutId="active-filter"
                 className="absolute top-0 left-0 w-full h-full bg-primary -z-10 rounded-full"
+                transition={{ type: "spring", bounce: 0.3 }}
               />
             )}
-            <TextReveal>{filter}</TextReveal>
+            <span>{filter}</span>
           </Button>
         </Transition>
       ))}
+
+      {/* Sort button */}
       <Transition viewport={{ once: true }}>
         <Sort />
       </Transition>
@@ -76,10 +82,16 @@ const Sort = () => {
 
   return (
     <Button
-      className="border border-white/20 px-4 py-2 rounded-full"
-      onClick={() => setSort(true)}
+      className="border border-white/20 px-4 py-2 rounded-full text-sm md:text-base relative"
+      onClick={() => setSort(!sort)}
     >
-      <TextReveal>{sort ? "Sorted" : "Sort"}</TextReveal>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        {sort ? "Sorted" : "Sort"}
+      </motion.span>
     </Button>
   );
 };

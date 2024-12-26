@@ -13,6 +13,54 @@ import { useCursorVariants } from "@/utils/context";
 import { Dialog } from "./ui/dialog";
 import { ProjectsProvider, useProjects } from "@/utils/project-context";
 
+// Dummy data
+const dummyProjects: Project[] = [
+  {
+    _id: "1",
+    title: "Portfolio Website",
+    image: { url: "/portfolio.png" },
+    techStack: ["React", "Web", "DevOps"],
+    enabled: true,
+  },
+  {
+    _id: "2",
+    title: "Warmhands Disaster Management System",
+    image: { url: "/dms.png" },
+    techStack: ["React", "Web"],
+    enabled: true,
+  },
+  {
+    _id: "3",
+    title: "Heart Disease Prediction Project",
+    image: { url: "/hdp.png" },
+    techStack: ["Machine Learning", "Web"],
+    enabled: true,
+  },
+  {
+    _id: "4",
+    title: "Astronomy Date Formatter NPM package",
+    image: { url: "/Astronomy.png" },
+    techStack: ["Web", "NPM"],
+    enabled: true,
+  },
+  {
+    _id: "5",
+    title:
+      "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
+    image: { url: "/docker.png" },
+    techStack: ["DevOps", "Web"],
+    enabled: true,
+  },
+  {
+    _id: "6",
+    title:
+      "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
+    image: { url: "/terraform.png" },
+    techStack: ["DevOps", "Web"],
+    enabled: true,
+  },
+];
+
 interface ProjectProps {
   data: Project[];
 }
@@ -33,7 +81,9 @@ const Projects = ({ data }: ProjectProps) => {
   );
 };
 
-export default Projects;
+export default function ProjectsWrapper() {
+  return <Projects data={dummyProjects} />;
+}
 
 const ProjectContainer = () => {
   const { filteredProjects, setSingleProject } = useProjects();
@@ -120,15 +170,6 @@ const Card = ({ title, image }: Project) => {
             </span>
           </button>
         </motion.div>
-        <div className="overflow-hidden max-md:hidden">
-          <motion.p
-            initial={{ y: 0, opacity: 0 }}
-            animate={{ y: hover ? -10 : 0, opacity: hover ? 1 : 0 }}
-            className="absolute text-white/50"
-          >
-            Lorem ipsum dolor sit amet.
-          </motion.p>
-        </div>
       </div>
       <Image
         src={image.url}
