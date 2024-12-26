@@ -59,6 +59,13 @@ const dummyProjects: Project[] = [
     techStack: ["DevOps", "Web"],
     enabled: true,
   },
+  {
+    _id: "7",
+    title: "My dialog app UI/UX design using Figma",
+    image: { url: "/mydialogapp.png" },
+    techStack: ["UI"],
+    enabled: true,
+  },
 ];
 
 interface ProjectProps {
