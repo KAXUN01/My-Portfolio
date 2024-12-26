@@ -61,7 +61,9 @@ export const Dialog = ({ showDialog, setShowDialog }: DialogProps) => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-white/50">{singleProject.description}</p>
+                  <p className="text-white/50 text-justify">
+                    {singleProject.description}
+                  </p>
                 </div>
               </div>
             )}
