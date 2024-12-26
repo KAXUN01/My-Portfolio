@@ -37,7 +37,7 @@ export const PageLoad = ({ setHideLoader }: PageLoadProps) => {
         <span className="font-semibold text-white/40">ThePortfolio</span>
         <div className="flex flex-col max-md:justify-between max-md:h-full">
           <p className="text-3xl md:text-5xl w-full md:w-2/5">
-            I develop 3D visuals, user interfaces and web applications
+            Hold tight... <br /> I&apos;m getting the code ready for you 🔥👨‍💻
           </p>
           <div className="flex justify-between items-end">
             <span className="text-white/30">Loading...</span>

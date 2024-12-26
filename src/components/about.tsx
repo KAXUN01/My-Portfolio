@@ -26,36 +26,30 @@ const About = ({ about, timeline }: AboutProps) => {
     >
       <div>
         <h3 className="md:text-5xl text-2xl font-bold overflow-hidden uppercase pb-8">
-          <SlideIn>{about.quote}</SlideIn>
+          <SlideIn>A little about me...</SlideIn>
         </h3>
         <Transition viewport={{ once: true }}>
           <p className="text-xl md:text-4xl text-foreground/50">
-            {about.description}
+            I&apos;m a web developer and UI/UX designer with a creative
+            background in graphic design. Over the years, I&apos;ve crafted
+            websites and applications that put users at the heart of the
+            experience. I&apos;m fueled by my love for coding, coffee, and
+            stargazing, and I bring that passion into every project I work on.
+            Right now, I&apos;m diving into DevOps, AWS, and cloud computing,
+            ensuring my projects not only look great but work seamlessly. Always
+            learning and collaborating with others to create practical,
+            real-world solutions that make a difference for users.
           </p>
         </Transition>
-        <div className="pt-10">
-          <div className="py-10 overflow-hidden grid w-full">
-            {education.map((edu, index) => (
-              <Transition key={edu._id}>
-                <TimelineCard
-                  index={index}
-                  activeIndex={activeIndex}
-                  setActiveIndex={setActiveIndex}
-                  timeline={edu}
-                />
-              </Transition>
-            ))}
-          </div>
-        </div>
       </div>
       <div className="relative">
         <div className="sticky top-6">
           <Transition>
             <Image
-              src={about?.avatar?.url || "/images/default-avatar.jpg"} // Fallback to default image
+              src={"/edited.png"}
               width={400}
               height={400}
-              alt={about?.name || "Default Name"} // Fallback alt text
+              alt={"Kasun Madhushan"}
             />
           </Transition>
         </div>
@@ -65,78 +59,3 @@ const About = ({ about, timeline }: AboutProps) => {
 };
 
 export default About;
-
-interface TimelineCardProps {
-  timeline: Timeline;
-  activeIndex: number;
-  setActiveIndex: Dispatch<SetStateAction<number>>;
-  index: number;
-}
-
-const TimelineCard = ({
-  timeline,
-  activeIndex,
-  setActiveIndex,
-  index,
-}: TimelineCardProps) => (
-  <div className="border-b border-primary/20 py-4">
-    <div
-      className="flex items-center justify-between gap-4 cursor-pointer select-none"
-      onClick={() => setActiveIndex(index)}
-    >
-      <span>0{index + 1}</span>
-      <span className="text-xl md:text-3xl font-bold flex-1">
-        {timeline.jobTitle}
-      </span>
-      <div className="relative size-6 flex items-center justify-center">
-        <span className="bg-primary w-4 md:w-6 h-0.5 absolute" />
-        <motion.span
-          initial={{ rotate: 90 }}
-          animate={{
-            rotate: activeIndex === index ? 0 : 90,
-          }}
-          className="absolute bg-primary w-4 md:w-6 h-0.5 rotate-90"
-        />
-      </div>
-    </div>
-    <motion.div
-      initial={{
-        height: activeIndex === index ? "100%" : 0,
-      }}
-      animate={{
-        height: activeIndex === index ? "100%" : 0,
-      }}
-      className="overflow-hidden"
-    >
-      <p className="text-foreground/60 py-4 max-md:text-sm">
-        {timeline.summary}
-      </p>
-      <div className="flex justify-between items-center pb-3 text-foreground/80">
-        <div className="max-md:text-sm">
-          <span>{timeline.company_name}</span>
-          <span>{timeline.jobLocation}</span>
-        </div>
-        <div className="max-md:text-xs">
-          <span className="italic">
-            {formatDate(timeline.startDate).month +
-              ", " +
-              formatDate(timeline.startDate).year}
-          </span>
-          {" - "}
-          <span className="italic">
-            {formatDate(timeline.endDate).month +
-              ", " +
-              formatDate(timeline.endDate).year}
-          </span>
-        </div>
-      </div>
-      <ul className="list-disc list-inside">
-        {timeline.bulletPoints.map((point, index) => (
-          <li key={index} className="text-foreground/80 max-md:text-sm">
-            {point}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  </div>
-);

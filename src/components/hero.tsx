@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { PageLoad } from "./ui/page-load";
+import Typewriter from "typewriter-effect";
 
 export const Hero = ({ about }: { about: About }) => {
   const [hideLoader, setHideLoader] = useState(true);
@@ -32,25 +33,36 @@ export const Hero = ({ about }: { about: About }) => {
               <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m Kasun </SlideIn>
               </h2>
-              <h1 className="md:text-7xl text-3xl overflow-hidden">
-                <SlideIn>{about.title}</SlideIn>
+              <h1 className="md:text-7xl text-3xl overflow-hidden opacity-80">
+                <SlideIn>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Devops Engineer",
+                        "Web Developer",
+                        "Technical Writer",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </SlideIn>
               </h1>
             </div>
             <Transition viewport={{ once: true }} className="w-full">
               <p className="opacity-70 md:text-xl py-4 w-10/12 md:w-2/3 mx-auto flex flex-wrap justify-center gap-2">
-                I develop 3D visuals, user interfaces and web applications
+                a techie who codes, caffeinates, and dreams up the next big
+                idea.
               </p>
             </Transition>
             <Transition viewport={{ once: true }}>
               <Link
-                href={"#contact"}
+                href={"/cv.pdf"}
+                target="_blank"
                 className="px-5 py-3 mt-4 rounded-full border border-white/50 flex items-center gap-4 group"
               >
-                <TextReveal>Let&apos;s talk</TextReveal>
-                <ArrowRight
-                  size={20}
-                  className="group-hover:rotate-90 transition-transform"
-                />
+                <TextReveal>My profile</TextReveal>
+                <ArrowRight size={20} />
               </Link>
             </Transition>
           </div>
