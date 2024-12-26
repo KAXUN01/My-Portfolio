@@ -30,7 +30,13 @@ export default function Home() {
       { _id: 2, name: "React", sequence: 2, enabled: true },
       { _id: 3, name: "Node.js", sequence: 3, enabled: true },
       { _id: 4, name: "AWS", sequence: 4, enabled: true },
-      { _id: 5, name: "CSS", sequence: 5, enabled: true },
+      { _id: 5, name: "GIT", sequence: 5, enabled: true },
+      { _id: 6, name: "LINUX", sequence: 1, enabled: true },
+      { _id: 7, name: "DOCKER", sequence: 2, enabled: true },
+      { _id: 8, name: "TERRAFORM", sequence: 3, enabled: true },
+      { _id: 9, name: "KUBERNATES", sequence: 4, enabled: true },
+      { _id: 10, name: "PYTHON", sequence: 5, enabled: true },
+      { _id: 11, name: "GO", sequence: 5, enabled: true },
     ],
     projects: [
       {
@@ -129,7 +135,7 @@ export default function Home() {
               ) : null
             )}
         </ParallaxText>
-        <ParallaxText baseVelocity={-5}>
+        <ParallaxText baseVelocity={-10}>
           {skills
             .sort((a, b) => a.sequence - b.sequence)
             .map((skill) =>

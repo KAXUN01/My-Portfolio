@@ -59,10 +59,12 @@ const Experience = () => {
                 </span>
                 <span className="max-md:hidden">{" - "}</span>
                 <span className="italic">
-                  {`${exp.endDate.toLocaleString("default", {
-                    month: "long",
-                    year: "numeric",
-                  })}`}
+                  {exp.endDate === "Present"
+                    ? exp.endDate
+                    : `${new Date(exp.endDate).toLocaleString("default", {
+                        month: "long",
+                        year: "numeric",
+                      })}`}
                 </span>
               </div>
             </div>

@@ -8,15 +8,14 @@ import { SectionHeading, PerspectiveText, SlideIn, Transition } from "./ui";
 const timeline = [
   {
     _id: 1,
-    jobTitle: "BSc (Hons) in ICT",
-    company_name: "New Pacific Systems & Technologies",
+    jobTitle: "BICT (Hons) in Network Technology",
+    company_name: "Faculty of Technology, University of Jayewardenepura",
     jobLocation: "",
     startDate: new Date("OCT 2021"),
     endDate: "Present",
-    summary:
-      "Specialized in Network Technology" <br />"Faculty of Technology" <br />"University of Jayewardenepura ",
+    summary: "",
     bulletPoints: [],
-    forEducation: false,
+    forEducation: true, // Set to true as it is an educational timeline
     enabled: true,
     sequence: 1,
   },
@@ -29,7 +28,7 @@ const Education = () => {
     <div className="relative pb-20">
       <span className="blob absolute top-[20%] left-0 w-1/3 h-5/6 blur-[100px] -z-10" />
       <SectionHeading className="pl-4 md:px-12 py-20">
-        <SlideIn className="text-white/40">Educatoin</SlideIn>
+        <SlideIn className="text-white/40">Education</SlideIn>
       </SectionHeading>
       <div>
         {timeline.map((exp, index) => (
@@ -55,10 +54,12 @@ const Education = () => {
                 </span>
                 <span className="max-md:hidden">{" - "}</span>
                 <span className="italic">
-                  {`${exp.endDate.toLocaleString("default", {
-                    month: "long",
-                    year: "numeric",
-                  })}`}
+                  {exp.endDate === "Present"
+                    ? exp.endDate
+                    : `${new Date(exp.endDate).toLocaleString("default", {
+                        month: "long",
+                        year: "numeric",
+                      })}`}
                 </span>
               </div>
             </div>
@@ -74,7 +75,11 @@ const Education = () => {
             >
               <p className="text-foreground/60 py-2">{exp.summary}</p>
               <ul className="list-disc list-inside">
-                
+                {exp.bulletPoints.map((point, idx) => (
+                  <li key={idx} className="text-foreground/50">
+                    {point}
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </Transition>
