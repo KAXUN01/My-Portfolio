@@ -14,8 +14,6 @@ export interface User {
   youtube: any[];
   projects: Project[];
   social_handles: SocialHandle[];
-  services: Service[];
-  testimonials: Testimonial[];
   createdAt: string;
   updatedAt: string;
   refreshToken: string;
@@ -55,7 +53,9 @@ export interface Project {
   githuburl: string;
   title: string;
   sequence: number;
-  image: Image;
+  image: {
+    url: string;
+  };
   description: string;
   techStack: string[];
   _id: string;
@@ -71,24 +71,6 @@ export interface SocialHandle {
   platform: string;
   url: string;
   image: Image;
-  enabled: boolean;
-  _id: string;
-}
-
-export interface Service {
-  name: string;
-  charge: string;
-  desc: string;
-  enabled: boolean;
-  _id: string;
-  image: Image;
-}
-
-export interface Testimonial {
-  image: Image;
-  name: string;
-  review: string;
-  position: string;
   enabled: boolean;
   _id: string;
 }

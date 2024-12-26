@@ -1,7 +1,7 @@
 "use client";
 
 import { useProjects } from "@/utils/project-context";
-import { ExternalLink, Github, X } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, ReactNode, SetStateAction } from "react";
@@ -28,7 +28,7 @@ export const Dialog = ({ showDialog, setShowDialog }: DialogProps) => {
                   className="absolute top-4 right-4 bg-black size-8 rounded-full border border-white/40 grid place-items-center text-white"
                   onClick={() => setShowDialog(false)}
                 >
-                  <X size={20} />
+                  X
                 </button>
                 <Image
                   src={singleProject.image.url}
@@ -61,12 +61,7 @@ export const Dialog = ({ showDialog, setShowDialog }: DialogProps) => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-white/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium, tempora. Officiis eveniet harum nemo sed sint
-                    distinctio fugiat earum cumque aliquid in magnam nam odio
-                    molestias architecto veniam, asperiores voluptates?
-                  </p>
+                  <p className="text-white/50">{singleProject.description}</p>
                 </div>
               </div>
             )}
