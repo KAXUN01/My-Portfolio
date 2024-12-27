@@ -1,17 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Input,
-  SectionHeading,
-  SlideIn,
-  Textarea,
-  TextReveal,
-  Transition,
-} from "./ui";
-import { ReactNode } from "react";
-import { cn } from "@/utils/cn";
-import Link from "next/link";
+import { Transition, TextReveal } from "./ui";
+import { RxInstagramLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
+import { FaFacebook, FaFigma, FaStackOverflow, FaMedium } from "react-icons/fa";
 
 export const ContactUs = () => {
   return (
@@ -34,62 +26,97 @@ export const ContactUs = () => {
               </Transition>
             </div>
 
-            <div className="display-flex md:gap-8 gap-4 mt-auto md:pb-16">
-              <Transition transition={{ delay: 0.4 + 1 * 0.1 }}>
-                <Link href={"https://www.linkedin.com/in/kaxun01/"}>
-                  <TextReveal>Linkedin</TextReveal>
-                </Link>
-                <Link href={"https://www.linkedin.com/in/kaxun01/"}>
-                  <TextReveal>Linkedin</TextReveal>
-                </Link>
-                <Link href={"https://www.linkedin.com/in/kaxun01/"}>
-                  <TextReveal>Linkedin</TextReveal>
-                </Link>
-                <Link href={"https://www.linkedin.com/in/kaxun01/"}>
-                  <TextReveal>Linkedin</TextReveal>
-                </Link>
-              </Transition>
+            <div className="flex flex-col items-start space-y-6 md:space-y-0 md:gap-8 mt-auto md:pb-16">
+              <div className="flex flex-col items-start space-y-4">
+                {/* Community Links */}
+                <h3 className="text-xl font-bold mb-2">Community</h3>
+                <a
+                  href="https://www.figma.com/@kaxun" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <FaFigma />
+                  <span>Figma</span>
+                </a>
+                <a
+                  href="https://github.com/KAXUN01" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <RxGithubLogo />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://stackoverflow.com/users/21034982/kaxun" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <FaStackOverflow />
+                  <span>Stack Overflow</span>
+                </a>
+                <a
+                  href="https://medium.com/@kaxun" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <FaMedium />
+                  <span>Medium</span>
+                </a>
+              </div>
+
+              <div className="flex flex-col items-start space-y-4">
+                {/* Social Media Links */}
+                <h3 className="text-xl font-bold mb-2">Social Media</h3>
+                <a
+                  href="https://www.linkedin.com/in/kaxun01/" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <RxLinkedinLogo />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/kasun.madushan.wickramasinghe/" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <FaFacebook />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/k_a_x_u_n/" // Update link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+                >
+                  <RxInstagramLogo />
+                  <span>Instagram</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <footer className="flex items-center justify-between md:px-8 px-2 py-4 text-sm">
-        <Transition>
-          <div>&copy; {new Date().getFullYear()} ThePortfolio</div>
-        </Transition>
-        <Transition>
-          <p>developed by @Kasun</p>
-        </Transition>
+
+      {/* Footer */}
+      <footer className="flex flex-col md:flex-row items-center justify-between md:px-8 px-4 py-8 bg-black text-white">
+        <div className="text-center md:text-left mb-4 md:mb-0">
+          <Transition>
+            <div>&copy; {new Date().getFullYear()} ThePortfolio</div>
+          </Transition>
+        </div>
+        <div className="text-center md:text-right">
+          <Transition>
+            <p className="text-sm">Developed by @Kasun</p>
+          </Transition>
+        </div>
       </footer>
     </motion.section>
-  );
-};
-
-interface BackgroundScaleProps {
-  children: ReactNode;
-  className?: string;
-}
-
-export const BackgroundScale = ({
-  children,
-  className,
-}: BackgroundScaleProps) => {
-  return (
-    <motion.div
-      whileHover="whileHover"
-      whileFocus="whileHover"
-      whileTap="whileHover"
-      initial="initial"
-      className={cn("relative p-1 group", className)}
-    >
-      <motion.span
-        variants={{
-          initial: { scaleY: 0 },
-          whileHover: { scaleY: 1 },
-        }}
-        className="absolute top-0 left-0 h-full w-full bg-primary -z-10 group-hover:text-black"
-      />
-      {children}
-    </motion.div>
   );
 };
