@@ -16,7 +16,7 @@ const Nav = ({ setIsActive }: NavProps) => {
   const MotionLink = motion(Link);
 
   return (
-    <div className="flex justify-between flex-col w-full h-full px-10 pt-[100px] pb-[50px]">
+    <div className="flex justify-between flex-col w-full px-10 pt-[100px] pb-[50px]">
       <div className="flex gap-2 flex-col">
         <div className="linkContainer" onClick={() => setIsActive(false)}>
           <Link href="/" className="flex flex-wrap overflow-hidden">
@@ -67,7 +67,31 @@ const Nav = ({ setIsActive }: NavProps) => {
           </Link>
         </div>
         <div className="linkContainer" onClick={() => setIsActive(false)}>
-          <Link href="#Education" className="flex flex-wrap overflow-hidden">
+          <Link href="#experience" className="flex flex-wrap overflow-hidden">
+            <motion.div
+              variants={perspective}
+              initial="initial"
+              animate="enter"
+              whileHover="whileHover"
+              whileTap="whileHover"
+              exit="exit"
+              className="text-5xl text-background flex items-center justify-between"
+            >
+              <motion.span
+                variants={{ initial: { x: -20 }, whileHover: { x: 0 } }}
+              >
+                <ArrowRight />
+              </motion.span>
+              <motion.span
+                variants={{ initial: { x: 0 }, whileHover: { x: 20 } }}
+              >
+                Experience
+              </motion.span>
+            </motion.div>
+          </Link>
+        </div>
+        <div className="linkContainer" onClick={() => setIsActive(false)}>
+          <Link href="#education" className="flex flex-wrap overflow-hidden">
             <motion.div
               variants={perspective}
               initial="initial"
@@ -86,6 +110,30 @@ const Nav = ({ setIsActive }: NavProps) => {
                 variants={{ initial: { x: 0 }, whileHover: { x: 20 } }}
               >
                 Education
+              </motion.span>
+            </motion.div>
+          </Link>
+        </div>
+        <div className="linkContainer" onClick={() => setIsActive(false)}>
+          <Link href="#skills" className="flex flex-wrap overflow-hidden">
+            <motion.div
+              variants={perspective}
+              initial="initial"
+              animate="enter"
+              whileHover="whileHover"
+              whileTap="whileHover"
+              exit="exit"
+              className="text-5xl text-background flex items-center justify-between"
+            >
+              <motion.span
+                variants={{ initial: { x: -20 }, whileHover: { x: 0 } }}
+              >
+                <ArrowRight />
+              </motion.span>
+              <motion.span
+                variants={{ initial: { x: 0 }, whileHover: { x: 20 } }}
+              >
+                Skills
               </motion.span>
             </motion.div>
           </Link>

@@ -1,18 +1,12 @@
 "use client";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Nav from "./nav";
-import { TextReveal, Transition } from "./ui";
+import Nav from "./nav"; // No need to pass social anymore
+import { TextReveal } from "./ui";
 import { useMediaQuery } from "@/utils/useMediaQuery";
 import { menu } from "@/utils/anim";
-import { SocialHandle } from "@/utils/interfaces";
-import Link from "next/link";
 
-interface HeaderProps {
-  social: SocialHandle[];
-}
-
-const Header = ({ social }: HeaderProps) => {
+const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -33,7 +27,8 @@ const Header = ({ social }: HeaderProps) => {
         initial="closed"
       >
         <AnimatePresence>
-          {isActive && <Nav social={social} setIsActive={setIsActive} />}
+          {isActive && <Nav setIsActive={setIsActive} />}{" "}
+          {/* Removed social prop */}
         </AnimatePresence>
       </motion.div>
       <Button
@@ -82,13 +77,3 @@ function Button({
     </div>
   );
 }
-
-// Dummy Data Example
-const dummySocial: SocialHandle[] = [
-  { name: "GitHub", url: "https://github.com" },
-  { name: "LinkedIn", url: "https://linkedin.com" },
-  { name: "Twitter", url: "https://twitter.com" },
-];
-
-// Example Usage
-<Header social={dummySocial} />;
