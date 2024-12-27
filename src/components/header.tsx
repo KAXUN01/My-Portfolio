@@ -11,6 +11,7 @@ import Link from "next/link";
 interface HeaderProps {
   social: SocialHandle[];
 }
+
 const Header = ({ social }: HeaderProps) => {
   const [isActive, setIsActive] = useState(false);
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -81,3 +82,13 @@ function Button({
     </div>
   );
 }
+
+// Dummy Data Example
+const dummySocial: SocialHandle[] = [
+  { name: "GitHub", url: "https://github.com" },
+  { name: "LinkedIn", url: "https://linkedin.com" },
+  { name: "Twitter", url: "https://twitter.com" },
+];
+
+// Example Usage
+<Header social={dummySocial} />;

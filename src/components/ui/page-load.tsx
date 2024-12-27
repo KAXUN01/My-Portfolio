@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import "ldrs/bouncy";
 
 interface PageLoadProps {
   hideLoader: boolean;
@@ -37,10 +38,13 @@ export const PageLoad = ({ setHideLoader }: PageLoadProps) => {
         <span className="font-semibold text-white/40">ThePortfolio</span>
         <div className="flex flex-col max-md:justify-between max-md:h-full">
           <p className="text-3xl md:text-5xl w-full md:w-2/5">
-            Hold tight... <br /> I&apos;m getting the code ready for you 🔥👨‍💻
+            Hold tight... <br /> I&apos;m getting the code ready for you
           </p>
           <div className="flex justify-between items-end">
-            <span className="text-white/30">Loading...</span>
+            <span className="text-white/30">
+              Loading...
+              <l-bouncy size="45" speed="1.75" color="black"></l-bouncy>
+            </span>
             <motion.span className="md:text-9xl text-7xl font-semibold md:font-bold">
               {counter}%
             </motion.span>
