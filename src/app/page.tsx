@@ -103,7 +103,7 @@ export default function Home() {
       <Header social={social_handles} />
       <Hero about={about} />
       <About about={about} timeline={timeline} />
-      <Experience timeline={timeline} />
+      <Experience timeline={timeline} id="experience" />
       <Education education={education} />
 
       {/* ===SKILLS SECTION=== */}

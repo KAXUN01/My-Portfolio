@@ -129,8 +129,8 @@ const Projects = ({ data }: ProjectProps) => {
   return (
     <ProjectsProvider data={data}>
       <section className="md:p-8 p-4 relative" id="projects">
-        <SectionHeading className="md:pl-16">
-          <SlideIn className="text-white">Projects</SlideIn>
+        <SectionHeading className="pl-4 md:px-12 py-20">
+          <SlideIn className="text-white/40">Projects</SlideIn>
         </SectionHeading>
         <Filters />
         <ProjectContainer />
