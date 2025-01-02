@@ -34,8 +34,8 @@ export default function Home() {
         </Link>
       </Transition>
       <Header />
-      <Hero about={undefined} />
-      <About about={undefined} timeline={[]} />
+      <Hero />
+      <About timeline={[]} />
       <Experience id="experience" />
       <Education />
 
