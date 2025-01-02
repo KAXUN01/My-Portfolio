@@ -15,10 +15,6 @@ interface AboutProps {
 const About = ({ about, timeline }: AboutProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const education = timeline
-    .filter((line) => line.forEducation && line.enabled === true)
-    .sort((a, b) => a.sequence - b.sequence);
-
   return (
     <section
       className="grid md:grid-cols-[1.8fr_1fr] gap-x-10 py-20 px-4 md:px-8 relative"

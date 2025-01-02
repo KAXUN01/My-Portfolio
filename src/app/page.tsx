@@ -1,13 +1,7 @@
 import About from "@/components/about";
 import Header from "@/components/header";
 import Projects from "@/components/projects";
-import {
-  ParallaxText,
-  SectionHeading,
-  SlideIn,
-  TextReveal,
-  Transition,
-} from "@/components/ui";
+import { ParallaxText, TextReveal, Transition } from "@/components/ui";
 
 import { UserObject } from "@/utils/interfaces";
 import Experience from "@/components/experience";
@@ -19,12 +13,6 @@ import { Hero } from "@/components/hero";
 export default function Home() {
   // Dummy data
   const user: UserObject = {
-    about: {
-      name: "Kasun Madhushan",
-      description:
-        "I am a web developer with a background in graphic design and UI/UX. I have experience in creating scalable, efficient websites and applications.",
-      photo: "/edited.png",
-    },
     skills: [
       { _id: 1, name: "JavaScript", sequence: 1, enabled: true },
       { _id: 2, name: "React", sequence: 2, enabled: true },
@@ -38,60 +26,9 @@ export default function Home() {
       { _id: 10, name: "PYTHON", sequence: 10, enabled: true },
       { _id: 11, name: "GO", sequence: 11, enabled: true },
     ],
-    projects: [
-      {
-        _id: 1,
-        title: "Project One",
-        description: "Description of Project One",
-        link: "https://project1.com",
-      },
-      {
-        _id: 2,
-        title: "Project Two",
-        description: "Description of Project Two",
-        link: "https://project2.com",
-      },
-    ],
-    social_handles: {
-      github: "https://github.com/Kasun",
-      linkedin: "https://linkedin.com/in/kasun",
-    },
-    timeline: [
-      {
-        _id: 1,
-        jobTitle: "Web Developer",
-        company_name: "Tech Company",
-        jobLocation: "Remote",
-        startDate: "2022-01-01",
-        endDate: "2023-01-01",
-        summary: "Worked on web development projects using React.",
-        bulletPoints: [
-          "Developed user interfaces",
-          "Collaborated with designers",
-        ],
-      },
-    ],
-    education: [
-      {
-        _id: 1,
-        degree: "BSc in Information and Communication Technology",
-        institution: "University of Jayewardenepura",
-        startDate: "2019-09-01",
-        endDate: "2023-06-01",
-        summary: "Studied software development, networks, and systems.",
-      },
-      {
-        _id: 2,
-        degree: "Diploma in Full Stack Development",
-        institution: "University of Moratuwa",
-        startDate: "2017-09-01",
-        endDate: "2019-06-01",
-        summary: "Focused on front-end and back-end development.",
-      },
-    ],
   };
 
-  const { about, skills, projects, social_handles, timeline, education } = user;
+  const { skills } = user;
 
   return (
     <main className="relative">
@@ -100,11 +37,11 @@ export default function Home() {
           <TextReveal className="font-semibold">ThePortfolio</TextReveal>
         </Link>
       </Transition>
-      <Header social={social_handles} />
-      <Hero about={about} />
-      <About about={about} timeline={timeline} />
-      <Experience timeline={timeline} id="experience" />
-      <Education education={education} />
+      <Header />
+      <Hero />
+      <About />
+      <Experience id="experience" />
+      <Education />
 
       {/* ===SKILLS SECTION=== */}
       <section id="skills">
@@ -152,7 +89,7 @@ export default function Home() {
         </ParallaxText>
       </section>
       {/* ===PROJECTS SECTION=== */}
-      <Projects data={projects} />
+      <Projects />
       {/* ===CONTACT US=== */}
       <div
         className="rounded-t-[2rem] md:rounded-t-[3rem] overflow-hidden"
