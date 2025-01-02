@@ -9,26 +9,22 @@ import Education from "@/components/education";
 import { ContactUs } from "@/components/contact-us";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
+import Skills from "@/components/skills";
 
 export default function Home() {
-  // Dummy data
-  const user: UserObject = {
-    skills: [
-      { _id: 1, name: "JavaScript", sequence: 1, enabled: true },
-      { _id: 2, name: "React", sequence: 2, enabled: true },
-      { _id: 3, name: "Node.js", sequence: 3, enabled: true },
-      { _id: 4, name: "AWS", sequence: 4, enabled: true },
-      { _id: 5, name: "GIT", sequence: 5, enabled: true },
-      { _id: 6, name: "LINUX", sequence: 6, enabled: true },
-      { _id: 7, name: "DOCKER", sequence: 7, enabled: true },
-      { _id: 8, name: "TERRAFORM", sequence: 8, enabled: true },
-      { _id: 9, name: "KUBERNATES", sequence: 9, enabled: true },
-      { _id: 10, name: "PYTHON", sequence: 10, enabled: true },
-      { _id: 11, name: "GO", sequence: 11, enabled: true },
-    ],
-  };
-
-  const { skills } = user;
+  const skills = [
+    { _id: 1, name: "JavaScript", sequence: 1, enabled: true },
+    { _id: 2, name: "React", sequence: 2, enabled: true },
+    { _id: 3, name: "Node.js", sequence: 3, enabled: true },
+    { _id: 4, name: "AWS", sequence: 4, enabled: true },
+    { _id: 5, name: "GIT", sequence: 5, enabled: true },
+    { _id: 6, name: "LINUX", sequence: 6, enabled: true },
+    { _id: 7, name: "DOCKER", sequence: 7, enabled: true },
+    { _id: 8, name: "TERRAFORM", sequence: 8, enabled: true },
+    { _id: 9, name: "KUBERNATES", sequence: 9, enabled: true },
+    { _id: 10, name: "PYTHON", sequence: 10, enabled: true },
+    { _id: 11, name: "GO", sequence: 11, enabled: true },
+  ];
 
   return (
     <main className="relative">
@@ -38,56 +34,13 @@ export default function Home() {
         </Link>
       </Transition>
       <Header />
-      <Hero />
-      <About />
+      <Hero about={undefined} />
+      <About about={undefined} timeline={[]} />
       <Experience id="experience" />
       <Education />
 
       {/* ===SKILLS SECTION=== */}
-      <section id="skills">
-        <ParallaxText baseVelocity={-5}>
-          {skills
-            .sort((a, b) => a.sequence - b.sequence)
-            .map((skill) =>
-              skill.enabled ? (
-                <span
-                  key={skill._id}
-                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
-                >
-                  {skill.name} •
-                </span>
-              ) : null
-            )}
-        </ParallaxText>
-        <ParallaxText baseVelocity={5}>
-          {skills
-            .sort((a, b) => a.sequence - b.sequence)
-            .map((skill) =>
-              skill.enabled ? (
-                <span
-                  key={skill._id}
-                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
-                >
-                  {skill.name} •
-                </span>
-              ) : null
-            )}
-        </ParallaxText>
-        <ParallaxText baseVelocity={-10}>
-          {skills
-            .sort((a, b) => a.sequence - b.sequence)
-            .map((skill) =>
-              skill.enabled ? (
-                <span
-                  key={skill._id}
-                  className="md:text-7xl text-xl font-semibold uppercase text-white/30"
-                >
-                  {skill.name} •
-                </span>
-              ) : null
-            )}
-        </ParallaxText>
-      </section>
+      <Skills skills={skills} />
       {/* ===PROJECTS SECTION=== */}
       <Projects />
       {/* ===CONTACT US=== */}
