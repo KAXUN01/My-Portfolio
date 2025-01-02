@@ -4,33 +4,7 @@ export interface UserObject {
 }
 
 export interface User {
-  about: About;
-  _id: string;
-  username: string;
-  email: string;
-  role: string;
-  timeline: Timeline[];
   skills: Skill[];
-  youtube: any[];
-  projects: Project[];
-  social_handles: SocialHandle[];
-  createdAt: string;
-  updatedAt: string;
-  refreshToken: string;
-}
-
-export interface About {
-  name: string;
-  title: string;
-  subTitle: string;
-  description: string;
-  quote: string;
-  exp_year: string;
-  address: string;
-  some_total: string;
-  phoneNumber: string;
-  avatar: Avatar;
-  alternateAvatars: any[];
 }
 
 export interface Avatar {
