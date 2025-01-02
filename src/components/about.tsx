@@ -1,18 +1,14 @@
 "use client";
 
-import { About as AboutType, Timeline } from "@/utils/interfaces";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { formatDate } from "@/utils";
 import { SlideIn, Transition } from "./ui";
 
-interface AboutProps {
-  about: AboutType;
-  timeline: Timeline[];
-}
 
-const About = ({ about, timeline }: AboutProps) => {
+
+const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (

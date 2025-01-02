@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import { SlideIn, TextReveal, Transition } from "./ui";
-import { About } from "@/utils/interfaces";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { PageLoad } from "./ui/page-load";
 import Typewriter from "typewriter-effect";
 
-export const Hero = ({ about }: { about: About }) => {
+export const Hero = () => {
   const [hideLoader, setHideLoader] = useState(true);
 
   return (
