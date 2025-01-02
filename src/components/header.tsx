@@ -63,7 +63,7 @@ function Button({
             toggleMenu();
           }}
         >
-          <TextReveal>Menu</TextReveal>
+          Menu
         </motion.div>
         <motion.div
           className="bg-black h-full w-full grid place-items-center"
