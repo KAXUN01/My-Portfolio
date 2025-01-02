@@ -184,6 +184,30 @@ const Nav = ({ setIsActive }: NavProps) => {
             </motion.div>
           </Link>
         </div>
+        <div className="linkContainer" onClick={() => setIsActive(false)}>
+          <Link href="https://medium.com/@kaxun" className="flex flex-wrap overflow-hidden">
+            <motion.div
+              variants={perspective}
+              initial="initial"
+              animate="enter"
+              whileHover="whileHover"
+              whileTap="whileHover"
+              exit="exit"
+              className="text-5xl text-background flex items-center justify-between"
+            >
+              <motion.span
+                variants={{ initial: { x: -20 }, whileHover: { x: 0 } }}
+              >
+                <ArrowRight />
+              </motion.span>
+              <motion.span
+                variants={{ initial: { x: 0 }, whileHover: { x: 20 } }}
+              >
+                My Blog
+              </motion.span>
+            </motion.div>
+          </Link>
+        </div>
       </div>
     </div>
   );
