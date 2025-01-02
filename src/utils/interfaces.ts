@@ -41,14 +41,6 @@ export interface Image {
   url: string;
 }
 
-export interface SocialHandle {
-  platform: string;
-  url: string;
-  image: Image;
-  enabled: boolean;
-  _id: string;
-}
-
 export interface Timeline {
   company_name: string;
   summary: string;

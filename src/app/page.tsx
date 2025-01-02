@@ -12,12 +12,6 @@ import { Hero } from "@/components/hero";
 import Skills from "@/components/skills";
 import about from "@/components/about";
 
-const aboutData: About = {
-  // Your about data here
-  sdhgf: "sdhgf",
-  svh: "svh",
-};
-
 export default function Home() {
   const skills = [
     { _id: 1, name: "JavaScript", sequence: 1, enabled: true },
@@ -41,8 +35,8 @@ export default function Home() {
         </Link>
       </Transition>
       <Header />
-      <Hero about={aboutData} />
-      <About timeline={[]} about={aboutData} />
+      <Hero about={{}} />
+      <About timeline={[]} about={{}} />
       <Experience />
       <Education />
 
