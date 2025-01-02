@@ -13,8 +13,7 @@ const timeline = [
     jobLocation: "Remote",
     startDate: new Date("june 2023"),
     endDate: "Present",
-    summary:
-      "Developed user-friendly web applications using React and JavaScript.",
+    summary: "",
     bulletPoints: [
       "Created user-focused designs, including logos, banners, UI designs and prototypes.",
       "Collaborated with cross-functional teams to deliver high-quality visuals.",
