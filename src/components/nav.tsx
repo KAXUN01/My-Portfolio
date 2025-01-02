@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import { perspective } from "@/utils/anim";
 import { ArrowRight } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
-import { SocialHandle } from "@/utils/interfaces";
 
 interface NavProps {
   setIsActive: Dispatch<SetStateAction<boolean>>;
-  social: SocialHandle[];
 }
 
 const Nav = ({ setIsActive }: NavProps) => {

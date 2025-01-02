@@ -27,7 +27,7 @@ const Header = () => {
         initial="closed"
       >
         <AnimatePresence>
-          {isActive && <Nav setIsActive={setIsActive} social={[]} />}{" "}
+          {isActive && <Nav setIsActive={setIsActive}/>}{" "}
           {/* Removed social prop */}
         </AnimatePresence>
       </motion.div>
