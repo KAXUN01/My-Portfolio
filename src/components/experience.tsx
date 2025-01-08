@@ -8,16 +8,15 @@ import { SectionHeading, PerspectiveText, SlideIn, Transition } from "./ui";
 const timeline = [
   {
     _id: 1,
-    jobTitle: "Graphic Designer",
+    jobTitle: "Web Developer",
     company_name: "New Pacific Systems & Technologies",
     jobLocation: "Remote",
     startDate: new Date("june 2023"),
     endDate: "Present",
     summary: "",
     bulletPoints: [
-      "Created user-focused designs, including logos, banners, UI designs and prototypes.",
-      "Collaborated with cross-functional teams to deliver high-quality visuals.",
-      "Managed multiple projects, ensured timely delivery, and incorporated the latest design trends.",
+      "Designed and developed websites using platforms like WordPress, Wix and Feacreate",
+      "Achieved 30% increase in client engagement and a 25% rise in lead generation after launch.",
     ],
     forEducation: false,
     enabled: true,
