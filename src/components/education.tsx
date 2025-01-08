@@ -8,7 +8,7 @@ import { SectionHeading, PerspectiveText, SlideIn, Transition } from "./ui";
 const timeline = [
   {
     _id: 1,
-    jobTitle: "BICT (Hons) Network Technology",
+    jobTitle: "BICT (Hons) in Network Technology",
     company_name: "Faculty of Technology, University of Jayewardenepura",
     jobLocation: "",
     startDate: new Date("OCT 2021 "),
@@ -18,6 +18,19 @@ const timeline = [
     forEducation: true,
     enabled: true,
     sequence: 1,
+  },
+  {
+    _id: 2,
+    jobTitle: "Full Stack Developer Certification",
+    company_name: "University of Moratuwa",
+    jobLocation: "",
+    startDate: new Date("OCT 2021 "),
+    endDate: "Dec 2022",
+    summary: "",
+    bulletPoints: [],
+    forEducation: true,
+    enabled: true,
+    sequence: 2,
   },
 ];
 
