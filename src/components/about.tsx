@@ -53,8 +53,8 @@ const About = () => {
             practices. My goal is to leverage these skills to architect robust,
             automated solutions that make a difference in the digital world.
             {/* Call to Action */}
-            Let's connect over coffee and talk about technology, the cosmos, or
-            how we can work together to build something amazing.
+            Let&apos;s connect over coffee and talk about technology, the
+            cosmos, or how we can work together to build something amazing.
           </p>
         </Transition>
       </div>
