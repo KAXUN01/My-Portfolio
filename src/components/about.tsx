@@ -43,9 +43,9 @@ const About = () => {
             Node.js, AWS, Docker, and Kubernetes, focusing on creating
             efficient, scalable solutions. I&apos;m particularly passionate
             about implementing CI/CD pipelines and infrastructure as code using
-            tools like Terraform and GitHub Actions.
+            tools like Jenkins and GitHub Actions.
             {/* Personal Interests & Goals */}
-            When I&apos;m not coding, you'll find me stargazing or writing
+            When I&apos;m not coding, you&apos;ll find me stargazing or writing
             technical articles on Medium about AWS, cloud computing, and Linux.
             This fusion of astronomy and technology often inspires my creative
             projects. As a lifelong learner, I&apos;m constantly expanding my
