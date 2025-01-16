@@ -42,16 +42,15 @@ const dummyProjects: Project[] = [
   },
   {
     _id: "3",
-    title: "Heart Disease Prediction Machine Learning Project",
-    image: { url: "/hdp.png" },
-    techStack: ["Machine Learning", "Web"],
+    title: "Mail-Wizard : AI mail assistant",
+    image: { url: "/mail.png" },
+    techStack: ["React", "Web", "Spring Boot", "Java"],
     enabled: true,
-    githuburl:
-      "https://github.com/KAXUN01/Heart-disease-prediction-machine-leaning-project",
-    liveurl: "https://heart-disease-prediction-system-ml.streamlit.app/",
-    sequence: 3,
+    githuburl: "https://github.com/KAXUN01/Mail-Wizard",
+    liveurl: "https://github.com/KAXUN01/Mail-Wizard",
+    sequence: 1,
     description:
-      "Using Machine Learning to Understand Medical Data and Predict Heart Health: This project leverages machine learning algorithms to analyze medical data and identify factors influencing heart health By training models on a dataset of patient health metrics. This application supports early intervention and informed decision-making in healthcare.",
+      "Mail-Wizard is a powerful, user-friendly application designed to generate quick and professional email replies using google gemini API. This project comprises two parts: a Spring Boot backend and a React-based frontend, seamlessly integrated for an efficient user experience. ",
   },
   {
     _id: "4",
@@ -93,6 +92,19 @@ const dummyProjects: Project[] = [
   },
   {
     _id: "7",
+    title: "Heart Disease Prediction Machine Learning Project",
+    image: { url: "/hdp.png" },
+    techStack: ["Machine Learning", "Web"],
+    enabled: true,
+    githuburl:
+      "https://github.com/KAXUN01/Heart-disease-prediction-machine-leaning-project",
+    liveurl: "https://heart-disease-prediction-system-ml.streamlit.app/",
+    sequence: 3,
+    description:
+      "Using Machine Learning to Understand Medical Data and Predict Heart Health: This project leverages machine learning algorithms to analyze medical data and identify factors influencing heart health By training models on a dataset of patient health metrics. This application supports early intervention and informed decision-making in healthcare.",
+  },
+  {
+    _id: "8",
     title: "My dialog app UI/UX design using Figma",
     image: { url: "/mydialogapp.png" },
     techStack: ["UI"],
@@ -106,7 +118,7 @@ const dummyProjects: Project[] = [
       "A comprehensive UI/UX redesign project for the My Dialog mobile app, Sri Lanka's leading telecommunications service provider. The redesign focuses on modernizing the user interface while improving accessibility and user experience. Key features include a streamlined dashboard for quick access to account information, simplified bill payments and reload options, an intuitive data usage tracker, and a redesigned rewards system. The project demonstrates modern design principles with a clean, minimalist aesthetic, consistent typography, and a carefully chosen color palette that aligns with the Dialog brand identity.",
   },
   {
-    _id: "8",
+    _id: "9",
     title: "Crypto exchange website UI/UX design using Figma",
     image: { url: "/crypto.png" },
     techStack: ["UI"],
@@ -150,7 +162,7 @@ const ProjectContainer = () => {
 
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const numProjectToShow = isMobile ? 6 : 8;
+  const numProjectToShow = isMobile ? 6 : 6;
 
   return (
     <AnimatePresence>
