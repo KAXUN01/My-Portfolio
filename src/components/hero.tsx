@@ -50,8 +50,7 @@ export const Hero = () => {
             </div>
             <Transition viewport={{ once: true }} className="w-full">
               <p className="opacity-70 md:text-xl py-4 w-10/12 md:w-2/3 mx-auto flex flex-wrap justify-center gap-2">
-                a techie who codes, caffeinates, and dreams up the next big
-                idea.
+                a techie who dreams up the next big idea.
               </p>
             </Transition>
             <Transition viewport={{ once: true }}>
