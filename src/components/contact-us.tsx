@@ -39,6 +39,15 @@ export const ContactUs = () => {
               className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
             >
               <FaFigma />
+              <span>Google cloud skills</span>
+            </a>
+            <a
+              href="https://www.cloudskillsboost.google/public_profiles/909b3771-c80d-44c8-a189-33767dbd3632"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-gray-300 hover:text-white transition transform hover:scale-105"
+            >
+              <FaFigma />
               <span>Figma</span>
             </a>
           </div>
