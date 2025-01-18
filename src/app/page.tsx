@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Hero } from "@/components/hero";
 import Skills from "@/components/skills";
 import about from "@/components/about";
+import Credly from "@/components/badge";
 
 export default function Home() {
   const skills = [
@@ -39,6 +40,8 @@ export default function Home() {
       <About />
       <Experience />
       <Education />
+
+      <Credly />
 
       {/* ===SKILLS SECTION=== */}
       <Skills skills={skills} />
