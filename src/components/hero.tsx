@@ -32,7 +32,7 @@ export const Hero = () => {
               <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m Kasun </SlideIn>
               </h2>
-              <h1 className="md:text-7xl text-3xl overflow-hidden opacity-80">
+              <h1 className="md:text-6xl text-2xl overflow-hidden opacity-80">
                 <SlideIn>
                   <Typewriter
                     options={{
@@ -50,7 +50,7 @@ export const Hero = () => {
             </div>
             <Transition viewport={{ once: true }} className="w-full">
               <p className="opacity-70 md:text-xl py-4 w-10/12 md:w-2/3 mx-auto flex flex-wrap justify-center gap-2">
-                a techie who dreams up the next big idea.
+                I&apos;m a techie who dreams up the next big idea.
               </p>
             </Transition>
             <Transition viewport={{ once: true }}>
