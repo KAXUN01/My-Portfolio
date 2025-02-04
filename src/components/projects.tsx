@@ -35,9 +35,9 @@ const dummyProjects: Project[] = [
     techStack: ["DevOps", "Web"],
     enabled: true,
     githuburl:
-      "https://drive.google.com/file/d/1mMsGnskFXPzd6zUKs9g0eSguInqiW8Xw/view?usp=sharing",
+      "https://drive.google.com/drive/folders/17HGxtcfst_Jz1jHjWHPU6TUikQ-AjBN2?usp=sharing",
     liveurl:
-      "https://drive.google.com/file/d/1mMsGnskFXPzd6zUKs9g0eSguInqiW8Xw/view?usp=sharing",
+      "https://drive.google.com/drive/folders/17HGxtcfst_Jz1jHjWHPU6TUikQ-AjBN2?usp=sharing",
     sequence: 4,
     description:
       "Designed and implemented an enterprise IT infrastructure for a startup (USJP-Solutions) by deploying a Windows Server 2019-based Active Directory domain and a Linux-based web hosting and monitoring environment.",

@@ -39,7 +39,7 @@ export const Hero = () => {
                       strings: [
                         "Devops Engineer",
                         "Web Developer",
-                        "Technical Writer",
+                        "Medium Blog Writer",
                       ],
                       autoStart: true,
                       loop: true,
