@@ -30,6 +30,20 @@ const dummyProjects: Project[] = [
   },
   {
     _id: "2",
+    title: "Enterprise IT Infrastructure Deployment for USJP-Solutions",
+    image: { url: "/stack.png" },
+    techStack: ["DevOps", "Web"],
+    enabled: true,
+    githuburl:
+      "https://drive.google.com/drive/folders/17HGxtcfst_Jz1jHjWHPU6TUikQ-AjBN2?usp=sharing",
+    liveurl:
+      "https://drive.google.com/drive/folders/17HGxtcfst_Jz1jHjWHPU6TUikQ-AjBN2?usp=sharing",
+    sequence: 4,
+    description:
+      "Designed and implemented an enterprise IT infrastructure for a startup (USJP-Solutions) by deploying a Windows Server 2019-based Active Directory domain and a Linux-based web hosting and monitoring environment.",
+  },
+  {
+    _id: "3",
     title: "Warmhands Disaster Management System",
     image: { url: "/dms.png" },
     techStack: ["React", "Web"],
@@ -41,7 +55,7 @@ const dummyProjects: Project[] = [
       "A Disaster Management System developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). This system allows users to report incidents related to natural disasters and notifies users in the affected area after admin verification.",
   },
   {
-    _id: "3",
+    _id: "4",
     title: "Mail-Wizard : AI mail assistant",
     image: { url: "/mail.png" },
     techStack: ["React", "Web", "Spring Boot", "Java"],
@@ -53,7 +67,7 @@ const dummyProjects: Project[] = [
       "Mail-Wizard is a powerful, user-friendly application designed to generate quick and professional email replies using google gemini API. This project comprises two parts: a Spring Boot backend and a React-based frontend, seamlessly integrated for an efficient user experience. ",
   },
   {
-    _id: "4",
+    _id: "5",
     title: "Astronomy Date Formatter NPM package",
     image: { url: "/Astronomy.png" },
     techStack: ["Web", "NPM"],
@@ -65,7 +79,7 @@ const dummyProjects: Project[] = [
       "The astronomy-date-formatter is an innovative JavaScript package that transforms ordinary date formatting into a celestial experience. Designed for astronomy enthusiasts and creative developers, it offers exciting themes such as zodiac signs and lunar phases. What makes this package truly unique is its use of real lunar calculations.This package provides a distinctive way to display dates with a cosmic flair!",
   },
   {
-    _id: "5",
+    _id: "6",
     title:
       "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
     image: { url: "/docker.png" },
@@ -78,7 +92,7 @@ const dummyProjects: Project[] = [
       "This project automates the deployment of a Node.js application to AWS EC2 using GitHub Actions and Docker. It includes containerizing the app, setting up an EC2 server, and creating a CI/CD pipeline for seamless, automated updates with minimal manual effort.",
   },
   {
-    _id: "6",
+    _id: "7",
     title:
       "Deploy Node.js application to AWS EC2 using GitHub Actions and docker",
     image: { url: "/terraform.png" },
@@ -91,7 +105,7 @@ const dummyProjects: Project[] = [
       "Designed and implemented a robust CI/CD pipeline for seamless application deployment. Leveraged Terraform for infrastructure as code (IaC) to provision scalable and reliable cloud resources, and used GitHub Actions to automate build, test, and deployment processes.",
   },
   {
-    _id: "7",
+    _id: "8",
     title: "Heart Disease Prediction Machine Learning Project",
     image: { url: "/hdp.png" },
     techStack: ["Machine Learning", "Web"],
@@ -104,7 +118,7 @@ const dummyProjects: Project[] = [
       "Using Machine Learning to Understand Medical Data and Predict Heart Health: This project leverages machine learning algorithms to analyze medical data and identify factors influencing heart health By training models on a dataset of patient health metrics. This application supports early intervention and informed decision-making in healthcare.",
   },
   {
-    _id: "8",
+    _id: "9",
     title: "My dialog app UI/UX design using Figma",
     image: { url: "/mydialogapp.png" },
     techStack: ["UI"],
@@ -118,7 +132,7 @@ const dummyProjects: Project[] = [
       "A comprehensive UI/UX redesign project for the My Dialog mobile app, Sri Lanka's leading telecommunications service provider. The redesign focuses on modernizing the user interface while improving accessibility and user experience. Key features include a streamlined dashboard for quick access to account information, simplified bill payments and reload options, an intuitive data usage tracker, and a redesigned rewards system. The project demonstrates modern design principles with a clean, minimalist aesthetic, consistent typography, and a carefully chosen color palette that aligns with the Dialog brand identity.",
   },
   {
-    _id: "9",
+    _id: "10",
     title: "Crypto exchange website UI/UX design using Figma",
     image: { url: "/crypto.png" },
     techStack: ["UI"],
