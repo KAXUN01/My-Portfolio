@@ -18,7 +18,7 @@ Welcome to my **portfolio project**! This project showcases my work as a **Full 
 
 ---
 
-Thank you for visiting my portfolio. I hope you find it informative and enjoyable. Feel free to explore my work, and if you have any questions, don't hesitate to reach out via the contact section.
+Thank you for visiting my portfolio. I hope you find it informative and enjoyable. Feel free to explore my work, and if you have any questions, don't hesitate to reach out.
 
 Looking forward to connecting!
 
