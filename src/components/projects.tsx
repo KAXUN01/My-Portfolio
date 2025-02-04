@@ -38,7 +38,7 @@ const dummyProjects: Project[] = [
     liveurl: "https://www.npmjs.com/package/astronomy-date-formatter",
     sequence: 4,
     description:
-      "The astronomy-date-formatter is an innovative JavaScript package that transforms ordinary date formatting into a celestial experience. Designed for astronomy enthusiasts and creative developers, it offers exciting themes such as zodiac signs and lunar phases. What makes this package truly unique is its use of real lunar calculations.This package provides a distinctive way to display dates with a cosmic flair!",
+      "Designed and implemented an enterprise IT infrastructure for a startup (USJP-Solutions) by deploying a Windows Server 2019-based Active Directory domain and a Linux-based web hosting and monitoring environment.",
   },
   {
     _id: "2",
