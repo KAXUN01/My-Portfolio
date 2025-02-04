@@ -32,6 +32,19 @@ const timeline = [
     enabled: true,
     sequence: 2,
   },
+  {
+    _id: 3,
+    jobTitle: "Manage Kubernetes in Google Cloud badge",
+    company_name: "Google Cloud Skills Boost",
+    jobLocation: "",
+    startDate: new Date("Nov 2024 "),
+    endDate: "Dec 2024",
+    summary: "",
+    bulletPoints: [],
+    forEducation: true,
+    enabled: true,
+    sequence: 2,
+  },
 ];
 
 const Education = () => {
