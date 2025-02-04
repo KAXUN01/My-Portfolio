@@ -29,6 +29,18 @@ const dummyProjects: Project[] = [
       "I developed a dynamic portfolio website using Next.js, Three.js, and Framer Motion to showcase my work and skills. The site features smooth animations, interactive 3D elements, and responsive design, creating an engaging and visually rich user experience. Next.js ensures fast performance and SEO optimization, while Three.js adds immersive 3D graphics, and Framer Motion enhances animations for a modern interface.",
   },
   {
+    _id: "4",
+    title: "Enterprise IT Infrastructure Deployment for USJP-Solutions",
+    image: { url: "/stack.png" },
+    techStack: ["DevOps", "Web"],
+    enabled: true,
+    githuburl: "https://github.com/KAXUN01/Astronomy-Date-Formatter",
+    liveurl: "https://www.npmjs.com/package/astronomy-date-formatter",
+    sequence: 4,
+    description:
+      "The astronomy-date-formatter is an innovative JavaScript package that transforms ordinary date formatting into a celestial experience. Designed for astronomy enthusiasts and creative developers, it offers exciting themes such as zodiac signs and lunar phases. What makes this package truly unique is its use of real lunar calculations.This package provides a distinctive way to display dates with a cosmic flair!",
+  },
+  {
     _id: "2",
     title: "Warmhands Disaster Management System",
     image: { url: "/dms.png" },
