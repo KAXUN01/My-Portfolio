@@ -21,7 +21,25 @@ const timeline = [
     forEducation: false,
     enabled: true,
     sequence: 1,
-  },
+  }, {
+    _id: 2,
+    jobTitle: "Software Engineering Intern",
+    company_name: "Centre For Defence Research and Development(CDRD) - Ministry of Defence, Sri Lanka",
+    jobLocation: "Onsite",
+    startDate: new Date("July 2025"),
+    endDate: new Date("December 2025"),
+    summary: "",
+    bulletPoints: [
+      "Developed and enhanced full-stack applications using Spring Boot, React, and Laravel",
+      "Worked with Docker for containerization and environment consistency",
+      "Collaborated in an agile team environment, participating in daily stand-ups and task tracking",
+      "Enhanced system performance and user experience through continuous testing and improvements"
+    ],
+    forEducation: false,
+    enabled: true,
+    sequence: 2,
+  }
+
 ];
 
 const Experience = () => {
@@ -60,9 +78,9 @@ const Experience = () => {
                   {exp.endDate === "Present"
                     ? exp.endDate
                     : `${new Date(exp.endDate).toLocaleString("default", {
-                        month: "long",
-                        year: "numeric",
-                      })}`}
+                      month: "long",
+                      year: "numeric",
+                    })}`}
                 </span>
               </div>
             </div>
