@@ -23,7 +23,7 @@ const dummyProjects: Project[] = [
     techStack: ["DevOps", "Machine Learning", "Web"],
     enabled: true,
     githuburl: "https://github.com/KAXUN01/Heal-X-Bot",
-    liveurl: "https://github.com/KAXUN01/Heal-X-Bot",
+    liveurl: "https://drive.google.com/file/d/1RRyloDZpolTDwST1Sq8_L6Hh9kG3rYRY/view?usp=sharing",
     sequence: 0,
     description:
       "Designed and developed an AI-powered autonomous infrastructure management platform that continuously monitors distributed systems, detects DDoS attacks and infrastructure anomalies, predicts server failures, and executes automated self-healing actions with minimal human intervention. Integrated machine learning, reinforcement learning, explainable AI, Docker/Kubernetes orchestration, and Prometheus monitoring to improve system resilience, reducing downtime by up to 70% while achieving 96.5% threat detection accuracy and 20–40 second autonomous recovery times.",
