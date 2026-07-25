@@ -34,6 +34,7 @@ export interface Project {
   techStack: string[];
   _id: string;
   enabled: boolean;
+  gallery?: string[];
 }
 
 export interface Image {

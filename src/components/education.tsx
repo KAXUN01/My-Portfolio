@@ -11,8 +11,8 @@ const timeline = [
     jobTitle: "BICT (Hons) in Network Technology",
     company_name: "Faculty of Technology, University of Jayewardenepura",
     jobLocation: "",
-    startDate: new Date("OCT 2021 "),
-    endDate: "Present",
+    startDate: new Date("OCT 2022 "),
+    endDate: "OCT 2026",
     summary: "",
     bulletPoints: [],
     forEducation: true,
@@ -73,7 +73,7 @@ const Education = () => {
               </div>
               <div className="text-sm md:text-base inline-flex text-foreground/50 mt-2 md:mt-0">
                 <span className="italic">
-                  {`${exp.startDate.toLocaleString("default", {
+                  {`${exp.startDate.toLocaleString("en-US", {
                     month: "long",
                     year: "numeric",
                   })}`}
@@ -82,10 +82,10 @@ const Education = () => {
                 <span className="italic">
                   {exp.endDate === "Present"
                     ? exp.endDate
-                    : `${new Date(exp.endDate).toLocaleString("default", {
-                        month: "long",
-                        year: "numeric",
-                      })}`}
+                    : `${new Date(exp.endDate).toLocaleString("en-US", {
+                      month: "long",
+                      year: "numeric",
+                    })}`}
                 </span>
               </div>
             </div>

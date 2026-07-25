@@ -17,9 +17,29 @@ import Link from "next/link";
 // Updated dummy data with URLs
 const dummyProjects: Project[] = [
   {
+    _id: "11",
+    title: "Heal-X-Bot: AI-Driven Autonomous Self-Healing Cloud Platform",
+    image: { url: "/healx bot.png" },
+    techStack: ["DevOps", "Machine Learning", "Web"],
+    enabled: true,
+    githuburl: "https://github.com/KAXUN01/Heal-X-Bot",
+    liveurl: "https://github.com/KAXUN01/Heal-X-Bot",
+    sequence: 0,
+    description:
+      "Designed and developed an AI-powered autonomous infrastructure management platform that continuously monitors distributed systems, detects DDoS attacks and infrastructure anomalies, predicts server failures, and executes automated self-healing actions with minimal human intervention. Integrated machine learning, reinforcement learning, explainable AI, Docker/Kubernetes orchestration, and Prometheus monitoring to improve system resilience, reducing downtime by up to 70% while achieving 96.5% threat detection accuracy and 20–40 second autonomous recovery times.",
+    gallery: [
+      "/healxbot-1.png",
+      "/healxbot-2.png",
+      "/healxbot-3.png",
+      "/healxbot-4.png",
+      "/healxbot-5.png",
+      "/healxbot-6.png",
+    ],
+  },
+  {
     _id: "1",
     title: "Portfolio Website",
-    image: { url: "/portfolio.png" },
+    image: { url: "/PORTFOLIO.png" },
     techStack: ["React", "Web", "DevOps"],
     enabled: true,
     githuburl: "https://github.com/KAXUN01/nextjs-portfolio",

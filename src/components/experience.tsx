@@ -11,7 +11,7 @@ const timeline = [
     jobTitle: "Web Developer",
     company_name: "New Pacific Systems & Technologies",
     jobLocation: "Remote",
-    startDate: new Date("june 2023"),
+    startDate: new Date("june 2021"),
     endDate: "Present",
     summary: "",
     bulletPoints: [
@@ -68,7 +68,7 @@ const Experience = () => {
               </div>
               <div className="max-md:text-sm max-md:flex flex-col text-foreground/50">
                 <span className="italic">
-                  {`${exp.startDate.toLocaleString("default", {
+                  {`${exp.startDate.toLocaleString("en-US", {
                     month: "long",
                     year: "numeric",
                   })}`}
@@ -77,7 +77,7 @@ const Experience = () => {
                 <span className="italic">
                   {exp.endDate === "Present"
                     ? exp.endDate
-                    : `${new Date(exp.endDate).toLocaleString("default", {
+                    : `${new Date(exp.endDate).toLocaleString("en-US", {
                       month: "long",
                       year: "numeric",
                     })}`}
